@@ -107,38 +107,37 @@
                     <span>localisation</span> : Hôtel Bravia, Ouagadougou, Burkina Faso<br>
                 </div>
                 <form class="form">
-
-    
-                <p class="title">Register </p>
-                <p class="message">Signup now and get full access to our app. </p>
+                <form action="{{ route('reservations.store') }}" method="POST">
+                @csrf
+                <p class="title">Reservation </p>
+                <p class="message">Effectuer votre reservation </p>
                 <div class="flex">
-            <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Firstname</span>
-            </label>
+                <input type="hidden" name="nom_salle" value="Salle de conférence - Hôtel Bravia">
 
             <label>
-                <input required="" placeholder="" type="text" class="input">
-                <span>Lastname</span>
+            <h6>Date_reservation</h6>
+                <input required="" placeholder="" type="date" class="input" name="reserved_date">
+                <span></span>
             </label>
+
+            
         </div>  
             
         <label>
-            <input required="" placeholder="" type="email" class="input">
-            <span>Email</span>
+        <input required="" type="time" class="input long-input" min="1" placeholder="Heure_debut"name="start_time" >
+            <span>heure_debut</span>
+        </label> 
+        <label>
+        <input required="" type="time" class="input long-input" min="1" placeholder="Heure_fin" name="end_time">
+            <span>heure_fin</span>
         </label> 
         
-        <label>
-            <input required="" placeholder="" type="password" class="input">
-            <span>Password</span>
-        </label>
-        <label>
-            <input required="" placeholder="" type="password" class="input">
-            <span>Confirm password</span>
-        </label>
-        <button class="submit">Submit</button>
+        <button type="submit" class="submit">Réserver</button>
         <p class="signin">Already have an acount ? <a href="#">Signin</a> </p>
         </form>
+                </form>
+    
+                
             </div>
         </div>
         <div class="containerbas">

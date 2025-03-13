@@ -30,7 +30,6 @@ class Reservation extends Model
 
 	protected $casts = [
 		'user_id' => 'int',
-		'room_id' => 'int',
 		'reserved_date' => 'datetime',
 		'start_time' => 'datetime',
 		'end_time' => 'datetime'
@@ -38,17 +37,13 @@ class Reservation extends Model
 
 	protected $fillable = [
 		'user_id',
-		'room_id',
 		'reserved_date',
 		'start_time',
-		'end_time'
+		'end_time',
+		'nom_salle'
 	];
 	public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
-    }
-	public function room(): BelongsTo
-    {
-        return $this->belongsTo(Room::class);
     }
 }
