@@ -126,9 +126,7 @@ Route::middleware('auth')->group(function () {
 
 
 // Route pour afficher le formulaire (GET)
-Route::get('/reservations/{salle}', [ReservationController::class, 'create'])->name('reservations.create');
-
-// Route pour enregistrer la réservation (POST)
+//Route::get('/reservations/{salle}', [ReservationController::class, 'create'])->name('reservations.create');
 Route::post('/reservations', [ReservationController::class, 'store'])->name('reservations.store');
 
 

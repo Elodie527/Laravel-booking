@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();  // Référence à la table des utilisateurs
             $table->date('reserved_date');
-            $table->time('start_time');
-            $table->time('end_time');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->timestamps();
             $table->string('nom_salle'); 
         });
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservations');
+        Schema::dropIfExists('reservations');  
     }
 };

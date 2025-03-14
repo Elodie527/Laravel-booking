@@ -112,8 +112,11 @@
                 <p class="title">Reservation </p>
                 <p class="message">Effectuer votre reservation </p>
                 <div class="flex">
-                <input type="hidden" name="nom_salle" value="Salle de conférence - Hôtel Bravia">
-
+                <label>
+            <h6>Nom_salle</h6>
+                <input required="" placeholder="" type="text" class="input" name="nom_salle">
+                <span></span>
+            </label>
             <label>
             <h6>Date_reservation</h6>
                 <input required="" placeholder="" type="date" class="input" name="reserved_date">
@@ -124,11 +127,11 @@
         </div>  
             
         <label>
-        <input required="" type="time" class="input long-input" min="1" placeholder="Heure_debut"name="start_time" >
+        <input required="" type="time" class="input long-input"  placeholder="Heure_debut"name="start_time" >
             <span>heure_debut</span>
         </label> 
         <label>
-        <input required="" type="time" class="input long-input" min="1" placeholder="Heure_fin" name="end_time">
+        <input required="" type="time" class="input long-input"  placeholder="Heure_fin" name="end_time">
             <span>heure_fin</span>
         </label> 
         
@@ -157,6 +160,24 @@
         </div>
             
     </div>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+
+@if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
 
 </body>
 

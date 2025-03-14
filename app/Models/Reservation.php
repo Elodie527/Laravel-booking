@@ -30,9 +30,9 @@ class Reservation extends Model
 
 	protected $casts = [
 		'user_id' => 'int',
-		'reserved_date' => 'datetime',
-		'start_time' => 'datetime',
-		'end_time' => 'datetime'
+		'reserved_date' => 'date',
+		'start_time' => 'string',
+		'end_time' => 'string'
 	];
 
 	protected $fillable = [
@@ -47,3 +47,4 @@ class Reservation extends Model
         return $this->belongsTo(User::class);
     }
 }
+
